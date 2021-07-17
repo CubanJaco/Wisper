@@ -1,5 +1,6 @@
 package cu.jaco.wisper.utils
 
+import android.app.ActivityManager
 import android.app.admin.DevicePolicyManager
 import android.content.ComponentName
 import android.content.Context
@@ -27,4 +28,16 @@ fun Context.wipeData() {
     } else
         Toast.makeText(this, R.string.admin_not_enabled, Toast.LENGTH_SHORT).show()
 
+}
+
+fun Context.isMyServiceRunning(
+    serviceClass: Class<*>
+): Boolean {
+    val manager = getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+    @Suppress("DEPRECATION")
+    for (service in manager.getRunningServices(Int.MAX_VALUE)) {
+        if (serviceClass.name == service.service.className)
+            return true
+    }
+    return false
 }

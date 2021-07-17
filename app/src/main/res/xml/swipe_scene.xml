@@ -3,11 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <Transition
+        android:id="@+id/swipe_transition"
         app:constraintSetEnd="@id/end"
         app:constraintSetStart="@id/start"
-        app:duration="@android:integer/config_longAnimTime">
+        app:duration="1000"
+        app:staggered="0.1">
 
-        <OnSwipe app:dragDirection="dragRight" />
+        <OnSwipe
+            app:dragDirection="dragRight"
+            app:maxAcceleration="20"
+            app:maxVelocity="20"
+            app:onTouchUp="autoCompleteToStart"
+            app:touchAnchorId="@id/swipe_button" />
 
     </Transition>
 

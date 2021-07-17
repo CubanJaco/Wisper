@@ -41,7 +41,7 @@ abstract class BaseActivity : AppCompatActivity() {
 
     open fun getNavView(): NavigationView? = null
 
-    private fun visibleFragment(): Fragment? {
+    fun visibleFragment(): Fragment? {
 
         var f = supportFragmentManager.findFragmentById(fragmentContainer())
 

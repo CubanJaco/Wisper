@@ -31,20 +31,35 @@
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hello world"
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/panic_button"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                app:cardCornerRadius="80dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/count_down"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:includeFontPadding="false"
+                    android:textColor="?android:attr/textColorPrimaryInverse"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.card.MaterialCardView>
 
             <androidx.constraintlayout.motion.widget.MotionLayout
-                android:id="@+id/swipeMotionLayout"
+                android:id="@+id/swipe_motion_layout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layoutDescription="@xml/swipe_scene">
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                app:layoutDescription="@xml/swipe_scene"
+                app:layout_constraintBottom_toBottomOf="parent">
 
                 <View
                     android:id="@+id/swipe_background"

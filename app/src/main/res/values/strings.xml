@@ -8,7 +8,9 @@
 
     <string name="fragment_main_label">Inicio</string>
     <string name="swipe_to_cancel">Desilzar para cancelar</string>
-
     <string name="debug_swipe">App en modo desarrollo. Por seguridad no se borrarán los datos.</string>
+    <string name="notification_countdown_chanel_name">Temporizador</string>
+    <string name="notification_timer_title">Restablecimiento de fábrica</string>
+    <string name="notification_timer_message">Se borrarán todos los datos del dispositivo en menos de 30 segundos</string>
 
 </resources>
