@@ -1,0 +1,14 @@
+<resources>
+
+    <string name="admin_description">Permite borrar todos los datos del dispositivo</string>
+    <string name="admin_large_description">Se podrán eliminar todas las aplicaciónes instaladas, configuraciones y los datos de la memoria externa.</string>
+    <string name="admin_not_enabled">Es necesario habilitar el administrador de dispositivos</string>
+
+    <string name="one_more_time">Presione nuevamente para salir</string>
+
+    <string name="fragment_main_label">Inicio</string>
+    <string name="swipe_to_cancel">Desilzar para cancelar</string>
+
+    <string name="debug_swipe">App en modo desarrollo. Por seguridad no se borrarán los datos.</string>
+
+</resources>

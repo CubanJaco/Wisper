@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello world"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.motion.widget.MotionLayout
+                android:id="@+id/swipeMotionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutDescription="@xml/swipe_scene">
+
+                <View
+                    android:id="@+id/swipe_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_margin="@dimen/default_margin"
+                    android:alpha="0.1"
+                    android:background="@drawable/swipe_background"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/swipe_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/swipe_to_cancel"
+                    app:layout_constraintBottom_toBottomOf="@id/swipe_background"
+                    app:layout_constraintEnd_toEndOf="@id/swipe_background"
+                    app:layout_constraintStart_toStartOf="@id/swipe_background"
+                    app:layout_constraintTop_toTopOf="@id/swipe_background" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/swipe_button"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:clickable="false"
+                    android:padding="6dp"
+                    app:cornerRadius="@dimen/corners"
+                    app:icon="@drawable/ic_right_arrow"
+                    app:iconTint="?android:attr/textColorPrimaryInverse"
+                    app:layout_constraintBottom_toBottomOf="@id/swipe_background"
+                    app:layout_constraintStart_toStartOf="@id/swipe_background"
+                    app:layout_constraintTop_toTopOf="@id/swipe_background" />
+
+            </androidx.constraintlayout.motion.widget.MotionLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>
